@@ -6,4 +6,4 @@ pyngrok
 gradio
 
 
-Added requirements.txt for FitMinds app dependencies.
+

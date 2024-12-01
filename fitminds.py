@@ -3,6 +3,8 @@ import openai
 from textblob import TextBlob
 import pandas as pd
 
+st.write("Secrets loaded:", st.secrets)
+
 # Set OpenAI API key from Streamlit Secrets (for deployment on Streamlit Community Cloud)
 try:
     openai.api_key = st.secrets["OPENAI_API_KEY"]

@@ -2,23 +2,9 @@ import streamlit as st
 import openai
 from textblob import TextBlob
 import pandas as pd
-st.write("Secrets available:", st.secrets)
+# Set OpenAI API key directly (less secure)
+openai.api_key = "QWdBDAfPTeAk0_h3txkx9aYpRv0pyRuqCFxhnkgKuG3QJgYzaMrguisPh4ziwzDDl2fD9xD8epT3BlbkFJ88y5zkpiuU46a4_cEVQT9QsdoaqJDd6eayahLZeMTmEUm4sEcZkb6oYaeEstYR3_1ddie2vAsA"
 
-st.write(f"API Key (length: {len(st.secrets['OPENAI_API_KEY'])}):", st.secrets["OPENAI_API_KEY"])
-st.write(f"Loaded API Key: {st.secrets['OPENAI_API_KEY'][:10]}... (hidden for security)")
-
-
-# Retrieve OpenAI API key from Streamlit Secrets
-try:
-    # Attempt to retrieve API key
-    openai.api_key = st.secrets["OPENAI_API_KEY"]
-    st.write("OpenAI API key loaded successfully!")  # Debugging line
-except KeyError:
-    st.error("OpenAI API key is missing! Please set it in Streamlit Secrets.")
-    st.stop()  # Stop execution if the key is missing
-
-except ValueError as e:
-    st.error(f"OpenAI API key error: {e}")
     
 # --- GPT Response Generator ---
 def generate_gpt_response(user_input):

@@ -10,12 +10,13 @@ st.write(f"Loaded API Key: {st.secrets['OPENAI_API_KEY'][:10]}... (hidden for se
 
 # Retrieve OpenAI API key from Streamlit Secrets
 try:
-    openai.api_key = st.secrets["OPENAI_API_KEY"]  # Load the key
-    if not openai.api_key:
-        raise ValueError("API key is empty.")
-    st.write("OpenAI API key loaded successfully!")  # Debug message (remove later)
+    # Attempt to retrieve API key
+    openai.api_key = st.secrets["OPENAI_API_KEY"]
+    st.write("OpenAI API key loaded successfully!")  # Debugging line
 except KeyError:
     st.error("OpenAI API key is missing! Please set it in Streamlit Secrets.")
+    st.stop()  # Stop execution if the key is missing
+
 except ValueError as e:
     st.error(f"OpenAI API key error: {e}")
     

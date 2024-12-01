@@ -4,7 +4,16 @@ from textblob import TextBlob
 import pandas as pd
 # Set OpenAI API key directly (less secure)
 openai.api_key = "sk-svcacct-QHsnVWIq7wKCQ5hW65CiDAS9Y_GAbSE-JdhTn3PjYfZWOlHt01_S05etWkmT3BlbkFJhqOhZGDVG1K8tbr0Ua7lI6eBvGU0t7azzNVaZhO7Mw36Af4ECN6JT8wH_AA"
-
+try:
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[{"role": "user", "content": "Hello"}]
+    )
+    print("Response:", response['choices'][0]['message']['content'])
+except openai.error.AuthenticationError:
+    print("Authentication failed: Invalid API key.")
+except Exception as e:
+    print(f"An error occurred: {e}")
     
 # --- GPT Response Generator ---
 def generate_gpt_response(user_input):

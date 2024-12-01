@@ -19,11 +19,7 @@ Original file is located at
 !pip install streamlit pyngrok
 
 
-*   List item
-*   List item
 
-
-"""
 
 import streamlit as st
 import openai

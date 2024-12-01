@@ -5,12 +5,17 @@ import pandas as pd
 
 st.write("Secrets loaded:", st.secrets)
 
-# Set OpenAI API key from Streamlit Secrets (for deployment on Streamlit Community Cloud)
+# Retrieve OpenAI API key from Streamlit Secrets
 try:
-    openai.api_key = st.secrets["OPENAI_API_KEY"]
+    openai.api_key = st.secrets["OPENAI_API_KEY"]  # Load the key
+    if not openai.api_key:
+        raise ValueError("API key is empty.")
+    st.write("OpenAI API key loaded successfully!")  # Debug message (remove later)
 except KeyError:
     st.error("OpenAI API key is missing! Please set it in Streamlit Secrets.")
-
+except ValueError as e:
+    st.error(f"OpenAI API key error: {e}")
+    
 # --- GPT Response Generator ---
 def generate_gpt_response(user_input):
     """

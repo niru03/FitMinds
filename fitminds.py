@@ -3,7 +3,7 @@ import openai
 from textblob import TextBlob
 import pandas as pd
 # Set OpenAI API key directly (less secure)
-openai.api_key = "QWdBDAfPTeAk0_h3txkx9aYpRv0pyRuqCFxhnkgKuG3QJgYzaMrguisPh4ziwzDDl2fD9xD8epT3BlbkFJ88y5zkpiuU46a4_cEVQT9QsdoaqJDd6eayahLZeMTmEUm4sEcZkb6oYaeEstYR3_1ddie2vAsA"
+openai.api_key = "sk-svcacct-QHsnVWIq7wKCQ5hW65CiDAS9Y_GAbSE-JdhTn3PjYfZWOlHt01_S05etWkmT3BlbkFJhqOhZGDVG1K8tbr0Ua7lI6eBvGU0t7azzNVaZhO7Mw36Af4ECN6JT8wH_AA"
 
     
 # --- GPT Response Generator ---

@@ -1,0 +1,9 @@
+openai
+streamlit
+textblob
+pandas
+pyngrok
+gradio
+
+
+Added requirements.txt for FitMinds app dependencies.

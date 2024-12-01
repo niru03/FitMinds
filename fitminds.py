@@ -5,7 +5,7 @@ import pandas as pd
 
 # Set OpenAI API key from Streamlit Secrets (for deployment on Streamlit Community Cloud)
 try:
-    openai.api_key = st.secrets["QWdBDAfPTeAk0_h3txkx9aYpRv0pyRuqCFxhnkgKuG3QJgYzaMrguisPh4ziwzDDl2fD9xD8epT3BlbkFJ88y5zkpiuU46a4_cEVQT9QsdoaqJDd6eayahLZeMTmEUm4sEcZkb6oYaeEstYR3_1ddie2vAsA"]
+    openai.api_key = st.secrets["OPENAI_API_KEY"]
 except KeyError:
     st.error("OpenAI API key is missing! Please set it in Streamlit Secrets.")
 

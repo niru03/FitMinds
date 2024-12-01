@@ -2,8 +2,11 @@ import streamlit as st
 import openai
 from textblob import TextBlob
 import pandas as pd
+pip install --upgrade openai
 
-st.write("Secrets loaded:", st.secrets)
+st.write(f"API Key (length: {len(st.secrets['OPENAI_API_KEY'])}):", st.secrets["OPENAI_API_KEY"])
+st.write(f"Loaded API Key: {st.secrets['OPENAI_API_KEY'][:10]}... (hidden for security)")
+
 
 # Retrieve OpenAI API key from Streamlit Secrets
 try:
